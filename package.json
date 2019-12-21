@@ -1,7 +1,7 @@
 {
   "name": "react-spectrum",
-  "version": "1.0.4",
-  "description": "Generate colorful text placeholders 🎉",
+  "version": "1.0.5",
+  "description": "Generate colorful text placeholders 🎨",
   "main": "dist/react-spectrum.js",
   "module": "dist/react-spectrum.es.js",
   "jsnext:main": "dist/react-spectrum.es.js",
