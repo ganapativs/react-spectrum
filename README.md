@@ -62,6 +62,7 @@ import Spectrum from "react-spectrum";
 function Placeholder() {
   return (
     <Spectrum
+      width={500}
       colors={["#757575", "#999999", "#0871F2", "#BF5AF2"]}
     />
   );
