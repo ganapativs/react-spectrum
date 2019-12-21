@@ -78,12 +78,12 @@ const DrawLine = ({
 
   return (
     <>
-      {words.map(({ width: w, space, background }, i) => (
+      {words.map(({ width: w, distance, background }, i) => (
         <span
           key={i}
           style={{
             width: w,
-            marginRight: space,
+            marginRight: distance,
             height: wordHeight,
             background,
             display: 'inline-block',

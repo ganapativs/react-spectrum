@@ -39,15 +39,15 @@ var getWords = function (_a) {
     var totalWidth = 0;
     for (var i = 0; i < wordForLine; i += 1) {
         var pillWidth = wordWidths[getRandomInRange(0, wordWidths.length - 1)];
-        var pillSpace = wordDistances[getRandomInRange(0, wordDistances.length - 1)];
-        if (totalWidth + pillWidth + pillSpace > width) {
+        var pillDistance = wordDistances[getRandomInRange(0, wordDistances.length - 1)];
+        if (totalWidth + pillWidth + pillDistance > width) {
             break;
         }
         else {
-            totalWidth += pillWidth + pillSpace;
+            totalWidth += pillWidth + pillDistance;
         }
         var background = colors[getRandomInRange(0, colors.length - 1)];
-        words.push({ width: pillWidth, space: pillSpace, background: background });
+        words.push({ width: pillWidth, distance: pillDistance, background: background });
     }
     return words;
 };
@@ -113,10 +113,10 @@ var DrawLine = function (_a) {
         lineDistance,
     ]);
     return (React.createElement(React.Fragment, null, words.map(function (_a, i) {
-        var w = _a.width, space = _a.space, background = _a.background;
+        var w = _a.width, distance = _a.distance, background = _a.background;
         return (React.createElement("span", { key: i, style: {
                 width: w,
-                marginRight: space,
+                marginRight: distance,
                 height: wordHeight,
                 background: background,
                 display: 'inline-block',

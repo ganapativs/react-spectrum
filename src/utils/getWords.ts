@@ -12,7 +12,7 @@ const getWords = ({
   wordWidths: Array<number>;
   wordDistances: Array<number>;
   truncate: boolean;
-}): Array<{ width: number; space: number; background: string }> => {
+}): Array<{ width: number; distance: number; background: string }> => {
   const minWordWidth = Math.min(...wordWidths);
   const maxWordsPerLine = Math.floor(width / minWordWidth);
   const wordForLine = getRandomInRange(
@@ -27,17 +27,17 @@ const getWords = ({
   let totalWidth = 0;
   for (let i = 0; i < wordForLine; i += 1) {
     const pillWidth = wordWidths[getRandomInRange(0, wordWidths.length - 1)];
-    const pillSpace =
+    const pillDistance =
       wordDistances[getRandomInRange(0, wordDistances.length - 1)];
 
-    if (totalWidth + pillWidth + pillSpace > width) {
+    if (totalWidth + pillWidth + pillDistance > width) {
       break;
     } else {
-      totalWidth += pillWidth + pillSpace;
+      totalWidth += pillWidth + pillDistance;
     }
 
     const background = colors[getRandomInRange(0, colors.length - 1)];
-    words.push({ width: pillWidth, space: pillSpace, background });
+    words.push({ width: pillWidth, distance: pillDistance, background });
   }
 
   return words;

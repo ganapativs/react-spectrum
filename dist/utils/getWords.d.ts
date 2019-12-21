@@ -6,7 +6,7 @@ declare const getWords: ({ width, colors, wordWidths, wordDistances, truncate, }
     truncate: boolean;
 }) => {
     width: number;
-    space: number;
+    distance: number;
     background: string;
 }[];
 export default getWords;
