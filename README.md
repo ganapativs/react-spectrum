@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/demo-small.gif" alt="react-spectrum-animation">
+  <img src="./assets/demo-sm.gif" alt="react-spectrum-animation">
 </p>
 
 # React Spectrum
