@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="./assets/demo-sm.gif" alt="react-spectrum-animation">
+  <a href="https://codesandbox.io/s/react-spectrum-animation-vp353">
+    <img src="./assets/demo-sm.gif" alt="react-spectrum-animation">
+  </a>
 </p>
 
 # React Spectrum
@@ -14,6 +16,11 @@ Inspired by [this code illustration](./assets/codesandbox-illustration.png) on [
 [![npm version](https://badge.fury.io/js/react-spectrum.svg)](https://badge.fury.io/js/react-spectrum)
 [![GitHub version](https://badge.fury.io/gh/ganapativs%2Freact-spectrum.svg)](https://badge.fury.io/gh/ganapativs%2Freact-spectrum)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ganapativs/react-spectrum.svg)](https://greenkeeper.io/)
+
+## Demo
+
+- [Basic](https://codesandbox.io/s/react-spectrum-demo-83c90)
+- [Advanced](https://codesandbox.io/s/react-spectrum-demo-advanced-kh7zy)
 
 ## Table of Contents
 
@@ -56,7 +63,6 @@ function Placeholder() {
   return (
     <Spectrum
       colors={["#757575", "#999999", "#0871F2", "#BF5AF2"]}
-      paragraphs={2}
     />
   );
 }
@@ -99,10 +105,6 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 - Commit your changes: `git commit -am 'Add some feature'`
 - Push to the branch: `git push origin my-new-feature`
 - Submit a pull request with full remarks documenting your changes
-
-### TODO
-
-- [ ] Test cases
 
 ## License
 
