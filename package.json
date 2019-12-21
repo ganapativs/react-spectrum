@@ -1,0 +1,76 @@
+{
+  "name": "react-spectrum",
+  "version": "0.1.0-1",
+  "description": "Create colorful text placeholders 🎉",
+  "main": "dist/react-spectrum.js",
+  "module": "dist/react-spectrum.es.js",
+  "jsnext:main": "dist/react-spectrum.es.js",
+  "browser": "dist/react-spectrum.umd.js",
+  "types": "./dist/Spectrum.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ganapativs/react-spectrum.git"
+  },
+  "author": "Ganapati V S <vsg.inbox@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ganapativs/react-spectrum/issues"
+  },
+  "homepage": "https://github.com/ganapativs/react-spectrum",
+  "keywords": [
+    "react component",
+    "placeholder",
+    "colorful",
+    "spectrum",
+    "text"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist && mkdirp dist",
+    "build": "NODE_ENV=production rollup -c && tsc -d --emitDeclarationOnly",
+    "watch": "yarn build -w",
+    "lint": "tsc --noEmit && eslint './src/**/*' --quiet --fix",
+    "prepublishOnly": "yarn build",
+    "size": "size-limit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build && git add dist"
+    }
+  },
+  "size-limit": [
+    {
+      "limit": "1 KB",
+      "path": "dist/react-spectrum.js"
+    }
+  ],
+  "devDependencies": {
+    "@ganapativs/babel-preset-react": "^0.0.4",
+    "@ganapativs/eslint-config-react-ts": "^0.1.0",
+    "husky": "^3.1.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.27.13",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.3",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-uglify": "^6.0.4",
+    "size-limit": "^2.2.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.4"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.17",
+    "react": "^16.12.0",
+    "rollup-plugin-babel": "^4.3.3"
+  }
+}

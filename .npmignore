@@ -1,0 +1,15 @@
+*.swp
+*~
+*.iml
+.*.haste_cache.*
+.DS_Store
+.idea
+.gitignore
+.babelrc
+.eslintrc
+.travis.yml
+rollup.config.js
+tsconfig.json
+npm-debug.log
+yarn-error.log
+src
