@@ -1,13 +1,12 @@
+<p align="center">
+  <img src="./assets/demo-small.gif" alt="react-spectrum-animation">
+</p>
 
 # React Spectrum
 
 A tiny([**around 1.2kb gzip**](https://bundlephobia.com/result?p=react-spectrum)) React library to generate colorful text placeholders 🎉
 
 Inspired by [this code illustration](./assets/codesandbox-illustration.png) on [CodeSandbox](https://codesandbox.io) homepage 🙏
-
-<p align="center">
-  <img src="./assets/demo-small.gif" alt="react-spectrum-animation">
-</p>
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ganapativs/react-spectrum/)
