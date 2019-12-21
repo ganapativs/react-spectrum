@@ -6,7 +6,7 @@
 
 # React Spectrum
 
-A tiny([**around 1.2kb gzip**](https://bundlephobia.com/result?p=react-spectrum)) React library to generate colorful text placeholders 🎉
+A tiny([**around 1.2kb gzip**](https://bundlephobia.com/result?p=react-spectrum@1.0.1)) React library to generate colorful text placeholders 🎉
 
 Inspired by [this code illustration](./assets/codesandbox-illustration.png) on [CodeSandbox](https://codesandbox.io) homepage 🙏
 
