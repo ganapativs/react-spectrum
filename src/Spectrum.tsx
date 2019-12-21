@@ -23,7 +23,7 @@ type SpectrumProps = {
    */
   wordHeight?: number;
   /**
-   * Distance(margin) between lines
+   * Distance(margin) between the lines
    */
   lineDistance?: number;
   /**
@@ -36,11 +36,11 @@ type SpectrumProps = {
    */
   paragraphs?: number;
   /**
-   * Distance(margin) between paragraphs
+   * Distance(margin) between the paragraphs
    */
   paragraphDistance?: number;
   /**
-   * Show less words in last line to make it feel more natural
+   * Show less words in the last line for more natural feel
    */
   truncateLastLine?: boolean;
 };

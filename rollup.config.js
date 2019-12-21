@@ -5,6 +5,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript';
 import { eslint } from 'rollup-plugin-eslint';
+import cleanup from 'rollup-plugin-cleanup';
 import pkg from './package.json';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -13,11 +14,14 @@ const getPlugins = () => [
   external(),
   resolve(),
   babel({
-    comments: true,
     exclude: 'node_modules/**',
   }),
   commonjs(),
   typescript(),
+  // Cleanup typescript license and other comments from the output bundle
+  cleanup({
+    comments: false,
+  }),
 ];
 
 export default [
