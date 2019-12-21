@@ -77,13 +77,13 @@ function usePrevious(value) {
 }
 
 var DrawLine = function (_a) {
-    var width = _a.width, colors = _a.colors, wordWidths = _a.wordWidths, wordDistances = _a.wordDistances, lineHeight = _a.lineHeight, lineDistance = _a.lineDistance, truncate = _a.truncate;
+    var width = _a.width, colors = _a.colors, wordWidths = _a.wordWidths, wordDistances = _a.wordDistances, wordHeight = _a.wordHeight, lineDistance = _a.lineDistance, truncate = _a.truncate;
     var previous = usePrevious({
         width: width,
         colors: colors,
         wordWidths: wordWidths,
         wordDistances: wordDistances,
-        lineHeight: lineHeight,
+        wordHeight: wordHeight,
         lineDistance: lineDistance,
         truncate: truncate,
     });
@@ -102,7 +102,7 @@ var DrawLine = function (_a) {
         // whose reference might change on every re-render
         if (previous &&
             (previous.width !== width ||
-                previous.lineHeight !== lineHeight ||
+                previous.wordHeight !== wordHeight ||
                 previous.lineDistance !== lineDistance ||
                 previous.truncate !== truncate ||
                 !arraysEqual(previous.wordWidths, wordWidths) ||
@@ -124,7 +124,7 @@ var DrawLine = function (_a) {
         wordWidths,
         wordDistances,
         truncate,
-        lineHeight,
+        wordHeight,
         lineDistance,
     ]);
     return (React.createElement(React.Fragment, null, words.map(function (_a, i) {
@@ -132,7 +132,7 @@ var DrawLine = function (_a) {
         return (React.createElement("span", { key: i, style: {
                 width: w,
                 marginRight: space,
-                height: lineHeight,
+                height: wordHeight,
                 background: background,
                 display: 'inline-block',
                 borderRadius: Math.max.apply(Math, wordWidths),
@@ -143,10 +143,10 @@ var DrawLine = function (_a) {
 var DrawLine$1 = memo(DrawLine);
 
 var Spectrum = function (_a) {
-    var _b = _a.width, width = _b === void 0 ? 500 : _b, _c = _a.colors, colors = _c === void 0 ? ['#eee'] : _c, _d = _a.wordWidths, wordWidths = _d === void 0 ? [30, 60, 90, 120, 150] : _d, _e = _a.wordDistances, wordDistances = _e === void 0 ? [4, 8, 12] : _e, _f = _a.linesPerParagraph, linesPerParagraph = _f === void 0 ? 8 : _f, _g = _a.lineHeight, lineHeight = _g === void 0 ? 12 : _g, _h = _a.lineDistance, lineDistance = _h === void 0 ? 12 : _h, _j = _a.paragraphs, paragraphs = _j === void 0 ? 1 : _j, _k = _a.paragraphDistance, paragraphDistance = _k === void 0 ? 24 : _k, _l = _a.truncateLastLine, truncateLastLine = _l === void 0 ? true : _l;
+    var _b = _a.width, width = _b === void 0 ? 500 : _b, _c = _a.colors, colors = _c === void 0 ? ['#eee'] : _c, _d = _a.wordWidths, wordWidths = _d === void 0 ? [30, 60, 90, 120, 150] : _d, _e = _a.wordDistances, wordDistances = _e === void 0 ? [4, 8, 12] : _e, _f = _a.linesPerParagraph, linesPerParagraph = _f === void 0 ? 8 : _f, _g = _a.wordHeight, wordHeight = _g === void 0 ? 12 : _g, _h = _a.lineDistance, lineDistance = _h === void 0 ? 12 : _h, _j = _a.paragraphs, paragraphs = _j === void 0 ? 1 : _j, _k = _a.paragraphDistance, paragraphDistance = _k === void 0 ? 24 : _k, _l = _a.truncateLastLine, truncateLastLine = _l === void 0 ? true : _l;
     return (React.createElement(React.Fragment, null, new Array(paragraphs).fill(true).map(function (_, i) {
         var lines = new Array(linesPerParagraph).fill(true).map(function (__, j) { return (React.createElement("div", { "data-line": j, key: j },
-            React.createElement(DrawLine$1, { width: width, colors: colors, wordWidths: wordWidths, wordDistances: wordDistances, lineHeight: lineHeight, lineDistance: lineDistance, truncate: truncateLastLine ? j === linesPerParagraph - 1 : false }))); });
+            React.createElement(DrawLine$1, { width: width, colors: colors, wordWidths: wordWidths, wordDistances: wordDistances, wordHeight: wordHeight, lineDistance: lineDistance, truncate: truncateLastLine ? j === linesPerParagraph - 1 : false }))); });
         return (React.createElement("div", { "data-paragraph": i, key: i, style: {
                 marginBottom: paragraphDistance,
                 fontSize: 0,

@@ -1,15 +1,46 @@
 import React from 'react';
 declare type SpectrumProps = {
-    width: number;
-    colors: Array<string>;
-    wordWidths: Array<number>;
-    wordDistances: Array<number>;
-    lineHeight: number;
-    lineDistance: number;
-    linesPerParagraph: number;
-    paragraphs: number;
-    paragraphDistance: number;
-    truncateLastLine: boolean;
+    /**
+     * Width of the placeholder container
+     */
+    width?: number;
+    /**
+     * Possible colors of words, will be picked randomly
+     */
+    colors?: Array<string>;
+    /**
+     * Possible widths of words, will be picked randomly
+     */
+    wordWidths?: Array<number>;
+    /**
+     * Possible distance between words, will be picked randomly
+     */
+    wordDistances?: Array<number>;
+    /**
+     * Height of every word placeholder
+     */
+    wordHeight?: number;
+    /**
+     * Distance(margin) between lines
+     */
+    lineDistance?: number;
+    /**
+     * Lines per paragraph
+     * if there are multiple paragraphs, all of them will have same number of lines
+     */
+    linesPerParagraph?: number;
+    /**
+     * Number of paragraphs in the placeholder
+     */
+    paragraphs?: number;
+    /**
+     * Distance(margin) between paragraphs
+     */
+    paragraphDistance?: number;
+    /**
+     * Show less words in last line to make it feel more natural
+     */
+    truncateLastLine?: boolean;
 };
-declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, linesPerParagraph, lineHeight, lineDistance, paragraphs, paragraphDistance, truncateLastLine, }: SpectrumProps) => React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>>;
+declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, linesPerParagraph, wordHeight, lineDistance, paragraphs, paragraphDistance, truncateLastLine, }: SpectrumProps) => React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>>;
 export default _default;

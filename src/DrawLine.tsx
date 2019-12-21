@@ -3,22 +3,22 @@ import arraysEqual from './utils/arraysEqual';
 import getWords from './utils/getWords';
 import usePrevious from './usePrevious';
 
-type DrawLineProps = {
+interface DrawLineProps {
   width: number;
   colors: Array<string>;
   wordWidths: Array<number>;
   wordDistances: Array<number>;
   truncate: boolean;
-  lineHeight: number;
+  wordHeight: number;
   lineDistance: number;
-};
+}
 
 const DrawLine = ({
   width,
   colors,
   wordWidths,
   wordDistances,
-  lineHeight,
+  wordHeight,
   lineDistance,
   truncate,
 }: DrawLineProps): React.ReactElement => {
@@ -27,7 +27,7 @@ const DrawLine = ({
     colors,
     wordWidths,
     wordDistances,
-    lineHeight,
+    wordHeight,
     lineDistance,
     truncate,
   });
@@ -48,7 +48,7 @@ const DrawLine = ({
     if (
       previous &&
       (previous.width !== width ||
-        previous.lineHeight !== lineHeight ||
+        previous.wordHeight !== wordHeight ||
         previous.lineDistance !== lineDistance ||
         previous.truncate !== truncate ||
         !arraysEqual(previous.wordWidths, wordWidths) ||
@@ -72,7 +72,7 @@ const DrawLine = ({
     wordWidths,
     wordDistances,
     truncate,
-    lineHeight,
+    wordHeight,
     lineDistance,
   ]);
 
@@ -84,7 +84,7 @@ const DrawLine = ({
           style={{
             width: w,
             marginRight: space,
-            height: lineHeight,
+            height: wordHeight,
             background,
             display: 'inline-block',
             borderRadius: Math.max(...wordWidths),
