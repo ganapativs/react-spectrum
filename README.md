@@ -10,7 +10,7 @@ A tiny(**around 1.2kb gzip**) React library to generate colorful text placeholde
 
 Inspired by [this code illustration](./assets/codesandbox-illustration.png) on [CodeSandbox](https://codesandbox.io) homepage 🙏
 
-Also, check out [@BotSpectrum](https://twitter.com/BotSpectrum) twitter bot which tweets random colorful text placeholder patterns for inspiration 🎊
+Also, check out [@BotSpectrum](https://twitter.com/BotSpectrum) twitter bot that tweets randomly generated colorful text placeholders for inspiration 🎊
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ganapativs/react-spectrum/)
