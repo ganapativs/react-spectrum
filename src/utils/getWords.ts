@@ -26,18 +26,31 @@ const getWords = ({
   const words = [];
   let totalWidth = 0;
   for (let i = 0; i < wordForLine; i += 1) {
-    const pillWidth = wordWidths[getRandomInRange(0, wordWidths.length - 1)];
-    const pillDistance =
+    const wordWidth = wordWidths[getRandomInRange(0, wordWidths.length - 1)];
+    const wordDistance =
       wordDistances[getRandomInRange(0, wordDistances.length - 1)];
 
-    if (totalWidth + pillWidth + pillDistance > width) {
+    /**
+     * TODO
+     * ----
+     * Check if the possible last word with margin fits(if this fits, it might not be the last word)
+     * Check if possible last word without margin fits(this is the last word)
+     * If the word doesn't fit, we will stop
+     */
+    if (totalWidth + wordWidth + wordDistance > width) {
+      // If we cannot fit the word into the line
+      // clear the margin of the last word
+      const [last] = [...words].reverse();
+      if (last) {
+        last.distance = 0;
+      }
       break;
     } else {
-      totalWidth += pillWidth + pillDistance;
+      totalWidth += wordWidth + wordDistance;
     }
 
     const background = colors[getRandomInRange(0, colors.length - 1)];
-    words.push({ width: pillWidth, distance: pillDistance, background });
+    words.push({ width: wordWidth, distance: wordDistance, background });
   }
 
   return words;
