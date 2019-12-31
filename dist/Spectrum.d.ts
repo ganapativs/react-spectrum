@@ -21,6 +21,10 @@ declare type SpectrumProps = {
      */
     wordHeight?: number;
     /**
+     * Border radius of every word
+     */
+    wordRadius?: number;
+    /**
      * Distance(margin) between the lines
      */
     lineDistance?: number;
@@ -42,5 +46,5 @@ declare type SpectrumProps = {
      */
     truncateLastLine?: boolean;
 };
-declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, linesPerParagraph, wordHeight, lineDistance, paragraphs, paragraphDistance, truncateLastLine, }: SpectrumProps) => React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>>;
+declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, wordHeight, wordRadius, linesPerParagraph, lineDistance, paragraphs, paragraphDistance, truncateLastLine, }: SpectrumProps) => React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>>;
 export default _default;

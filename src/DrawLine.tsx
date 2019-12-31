@@ -10,6 +10,7 @@ interface DrawLineProps {
   wordDistances: Array<number>;
   truncate: boolean;
   wordHeight: number;
+  wordRadius: number;
   lineDistance: number;
 }
 
@@ -19,6 +20,7 @@ const DrawLine = ({
   wordWidths,
   wordDistances,
   wordHeight,
+  wordRadius,
   lineDistance,
   truncate,
 }: DrawLineProps): React.ReactElement => {
@@ -28,6 +30,7 @@ const DrawLine = ({
     wordWidths,
     wordDistances,
     wordHeight,
+    wordRadius,
     lineDistance,
     truncate,
   });
@@ -49,6 +52,7 @@ const DrawLine = ({
       previous &&
       (previous.width !== width ||
         previous.wordHeight !== wordHeight ||
+        previous.wordRadius !== wordRadius ||
         previous.lineDistance !== lineDistance ||
         previous.truncate !== truncate ||
         !arraysEqual(previous.wordWidths, wordWidths) ||
@@ -73,6 +77,7 @@ const DrawLine = ({
     wordDistances,
     truncate,
     wordHeight,
+    wordRadius,
     lineDistance,
   ]);
 
@@ -87,7 +92,7 @@ const DrawLine = ({
             height: wordHeight,
             background,
             display: 'inline-block',
-            borderRadius: Math.max(...wordWidths),
+            borderRadius: wordRadius,
             marginBottom: lineDistance,
           }}
         />

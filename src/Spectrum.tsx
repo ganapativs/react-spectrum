@@ -23,6 +23,10 @@ type SpectrumProps = {
    */
   wordHeight?: number;
   /**
+   * Border radius of every word
+   */
+  wordRadius?: number;
+  /**
    * Distance(margin) between the lines
    */
   lineDistance?: number;
@@ -50,8 +54,9 @@ const Spectrum = ({
   colors = ['#eee'],
   wordWidths = [30, 60, 90, 120, 150],
   wordDistances = [4, 8, 12],
-  linesPerParagraph = 8,
   wordHeight = 12,
+  wordRadius = 20,
+  linesPerParagraph = 8,
   lineDistance = 12,
   paragraphs = 1,
   paragraphDistance = 24,
@@ -68,6 +73,7 @@ const Spectrum = ({
               wordWidths={wordWidths}
               wordDistances={wordDistances}
               wordHeight={wordHeight}
+              wordRadius={wordRadius}
               lineDistance={lineDistance}
               truncate={truncateLastLine ? j === linesPerParagraph - 1 : false}
             />

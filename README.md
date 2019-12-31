@@ -80,6 +80,7 @@ function Placeholder() {
 | `wordWidths` | `Array<number>` | `[30, 60, 90, 120, 150]` | Possible widths of words, will be picked randomly |
 | `wordDistances` | `Array<number>` | `[4, 8, 12]` | Possible distance between words, will be picked randomly |
 | `wordHeight` | `number` | `12` | Height of every word placeholder |
+| `wordRadius` | `number` | `20` | Border radius of every word |
 | `lineDistance` | `number` | `12` | Distance(margin) between the lines |
 | `linesPerParagraph` | `number` | `8` |  Lines per paragraph. if there are multiple paragraphs, all of them will have same number of lines |
 | `paragraphs` | `number` | `1` | Number of paragraphs in the placeholder |
@@ -88,16 +89,16 @@ function Placeholder() {
 
 ## Contribute
 
-Thanks for taking time to contribute, please checkout the [src](src) to understand how things work.
+Thanks for taking the time to contribute, please check out the [src](src) to understand how things work.
 
 ### Reporting Issues
 
-Found a problem? Want a new feature? First of all see if your issue or idea has [already been reported](../../issues).
+Found a problem? Want a new feature? First of all, see if your issue or idea has [already been reported](../../issues).
 If don't, just open a [new clear and descriptive issue](../../issues/new).
 
 ### Submitting pull requests
 
-Pull requests are the greatest contributions, so be sure they are focused in scope, and do avoid unrelated commits.
+Pull requests are the greatest contributions, so be sure they are focused in scope and do avoid unrelated commits.
 
 - Fork it!
 - Clone your fork: `git clone https://github.com/<your-username>/react-spectrum`
