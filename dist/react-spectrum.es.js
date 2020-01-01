@@ -40,14 +40,25 @@ var getWords = function (_a) {
     for (var i = 0; i < wordForLine; i += 1) {
         var wordWidth = wordWidths[getRandomInRange(0, wordWidths.length - 1)];
         var wordDistance = wordDistances[getRandomInRange(0, wordDistances.length - 1)];
-        /**
-         * TODO
-         * ----
-         * Check if the possible last word with margin fits(if this fits, it might not be the last word)
-         * Check if possible last word without margin fits(this is the last word)
-         * If the word doesn't fit, we will stop
-         */
-        if (totalWidth + wordWidth + wordDistance > width) {
+        var totalWidthWithoutDistance = totalWidth + wordWidth;
+        totalWidth = totalWidthWithoutDistance + wordDistance;
+        // If we can just fit the word without margin, push it by resetting margin
+        var fitWord = totalWidthWithoutDistance <= width && totalWidth > width;
+        var fitWordWithDistance = totalWidth <= width;
+        if (fitWord || fitWordWithDistance) {
+            // If we are fitting the word, assume that it's the last word
+            // so, reset it's distance
+            if (fitWord && !fitWordWithDistance) {
+                wordDistance = 0;
+            }
+            var background = colors[getRandomInRange(0, colors.length - 1)];
+            words.push({ width: wordWidth, distance: wordDistance, background: background });
+            // If we are fitting the word, it's the last word
+            if (fitWord && !fitWordWithDistance) {
+                break;
+            }
+        }
+        else {
             // If we cannot fit the word into the line
             // clear the margin of the last word
             var last = __spreadArrays(words).reverse()[0];
@@ -56,11 +67,6 @@ var getWords = function (_a) {
             }
             break;
         }
-        else {
-            totalWidth += wordWidth + wordDistance;
-        }
-        var background = colors[getRandomInRange(0, colors.length - 1)];
-        words.push({ width: wordWidth, distance: wordDistance, background: background });
     }
     return words;
 };
