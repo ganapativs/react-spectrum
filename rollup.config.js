@@ -1,7 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
-import external from 'rollup-plugin-peer-deps-external';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript';
 import { eslint } from 'rollup-plugin-eslint';
@@ -11,7 +11,7 @@ import pkg from './package.json';
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const getPlugins = () => [
   eslint(),
-  external(),
+  peerDepsExternal(),
   resolve(),
   babel({
     exclude: 'node_modules/**',

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, memo, useState } from 'react';
+import { useRef, useEffect, memo, useState, createElement, Fragment } from 'react';
 
 function __spreadArrays() {
     for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
@@ -134,9 +134,9 @@ var DrawLine = function (_a) {
         wordRadius,
         lineDistance,
     ]);
-    return (React.createElement(React.Fragment, null, words.map(function (_a, i) {
+    return (createElement(Fragment, null, words.map(function (_a, i) {
         var w = _a.width, distance = _a.distance, background = _a.background;
-        return (React.createElement("span", { key: i, style: {
+        return (createElement("span", { key: i, style: {
                 width: w,
                 marginRight: distance,
                 height: wordHeight,
@@ -151,10 +151,10 @@ var DrawLine$1 = memo(DrawLine);
 
 var Spectrum = function (_a) {
     var _b = _a.width, width = _b === void 0 ? 500 : _b, _c = _a.colors, colors = _c === void 0 ? ['#eee'] : _c, _d = _a.wordWidths, wordWidths = _d === void 0 ? [30, 60, 90, 120, 150] : _d, _e = _a.wordDistances, wordDistances = _e === void 0 ? [4, 8, 12] : _e, _f = _a.wordHeight, wordHeight = _f === void 0 ? 12 : _f, _g = _a.wordRadius, wordRadius = _g === void 0 ? 20 : _g, _h = _a.linesPerParagraph, linesPerParagraph = _h === void 0 ? 8 : _h, _j = _a.lineDistance, lineDistance = _j === void 0 ? 12 : _j, _k = _a.paragraphs, paragraphs = _k === void 0 ? 1 : _k, _l = _a.paragraphDistance, paragraphDistance = _l === void 0 ? 24 : _l, _m = _a.truncateLastLine, truncateLastLine = _m === void 0 ? true : _m;
-    return (React.createElement(React.Fragment, null, new Array(paragraphs).fill(true).map(function (_, i) {
-        var lines = new Array(linesPerParagraph).fill(true).map(function (__, j) { return (React.createElement("div", { "data-line": j, key: j },
-            React.createElement(DrawLine$1, { width: width, colors: colors, wordWidths: wordWidths, wordDistances: wordDistances, wordHeight: wordHeight, wordRadius: wordRadius, lineDistance: lineDistance, truncate: truncateLastLine ? j === linesPerParagraph - 1 : false }))); });
-        return (React.createElement("div", { "data-paragraph": i, key: i, style: {
+    return (createElement(Fragment, null, new Array(paragraphs).fill(true).map(function (_, i) {
+        var lines = new Array(linesPerParagraph).fill(true).map(function (__, j) { return (createElement("div", { "data-line": j, key: j },
+            createElement(DrawLine$1, { width: width, colors: colors, wordWidths: wordWidths, wordDistances: wordDistances, wordHeight: wordHeight, wordRadius: wordRadius, lineDistance: lineDistance, truncate: truncateLastLine ? j === linesPerParagraph - 1 : false }))); });
+        return (createElement("div", { "data-paragraph": i, key: i, style: {
                 marginBottom: paragraphDistance,
                 fontSize: 0,
             } }, lines));

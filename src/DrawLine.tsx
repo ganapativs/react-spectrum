@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import * as React from 'react';
 import arraysEqual from './utils/arraysEqual';
 import getWords from './utils/getWords';
 import usePrevious from './usePrevious';
@@ -34,7 +34,7 @@ const DrawLine = ({
     lineDistance,
     truncate,
   });
-  const [words, setWords] = useState(() =>
+  const [words, setWords] = React.useState(() =>
     getWords({
       width,
       colors,
@@ -44,7 +44,7 @@ const DrawLine = ({
     }),
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     // Handle props update on the runtime
     // Memo isn't helping here as props contains array
     // whose reference might change on every re-render
@@ -101,4 +101,4 @@ const DrawLine = ({
   );
 };
 
-export default memo(DrawLine);
+export default React.memo(DrawLine);

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 interface DrawLineProps {
     width: number;
     colors: Array<string>;

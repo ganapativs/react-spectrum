@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import * as React from 'react';
 import DrawLine from './DrawLine';
 
 type SpectrumProps = {
@@ -96,4 +96,4 @@ const Spectrum = ({
   );
 };
 
-export default memo(Spectrum);
+export default React.memo(Spectrum);
