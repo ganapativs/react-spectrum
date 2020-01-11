@@ -2,6 +2,7 @@ import * as React from 'react';
 import arraysEqual from './utils/arraysEqual';
 import getWords from './utils/getWords';
 import usePrevious from './usePrevious';
+import { RenderWord } from './Spectrum';
 
 interface DrawLineProps {
   width: number;
@@ -12,6 +13,7 @@ interface DrawLineProps {
   wordHeight: number;
   wordRadius: number;
   lineDistance: number;
+  renderWord: RenderWord;
 }
 
 const DrawLine = ({
@@ -23,6 +25,7 @@ const DrawLine = ({
   wordRadius,
   lineDistance,
   truncate,
+  renderWord,
 }: DrawLineProps): React.ReactElement => {
   const previous = usePrevious({
     width,
@@ -33,6 +36,7 @@ const DrawLine = ({
     wordRadius,
     lineDistance,
     truncate,
+    renderWord,
   });
   const [words, setWords] = React.useState(() =>
     getWords({
@@ -83,20 +87,19 @@ const DrawLine = ({
 
   return (
     <>
-      {words.map(({ width: w, distance, background }, i) => (
-        <span
-          key={i}
-          style={{
-            width: w,
-            marginRight: distance,
-            height: wordHeight,
-            background,
-            display: 'inline-block',
-            borderRadius: wordRadius,
-            marginBottom: lineDistance,
-          }}
-        />
-      ))}
+      {words.map(({ width: w, distance, background }, i) => {
+        const style = {
+          width: w,
+          marginRight: distance,
+          height: wordHeight,
+          background,
+          display: 'inline-block',
+          borderRadius: wordRadius,
+          marginBottom: lineDistance,
+        };
+
+        return renderWord({ key: i, style });
+      })}
     </>
   );
 };

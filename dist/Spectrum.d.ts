@@ -1,4 +1,9 @@
 import * as React from 'react';
+declare type RenderWordProps = {
+    key: number;
+    style: React.CSSProperties;
+};
+export declare type RenderWord = ({ key, style, }: RenderWordProps) => React.ReactElement;
 declare type SpectrumProps = {
     /**
      * Width of the placeholder container
@@ -45,6 +50,10 @@ declare type SpectrumProps = {
      * Show less words in the last line for more natural feel
      */
     truncateLastLine?: boolean;
+    /**
+     * Render word with customizations
+     */
+    renderWord?: RenderWord;
 };
-declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, wordHeight, wordRadius, linesPerParagraph, lineDistance, paragraphs, paragraphDistance, truncateLastLine, }: SpectrumProps) => React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>>;
+declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, wordHeight, wordRadius, linesPerParagraph, lineDistance, paragraphs, paragraphDistance, truncateLastLine, renderWord, }: SpectrumProps) => React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>>;
 export default _default;

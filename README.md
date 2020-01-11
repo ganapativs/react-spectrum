@@ -86,6 +86,7 @@ function Placeholder() {
 | `paragraphs` | `number` | `1` | Number of paragraphs in the placeholder |
 | `paragraphDistance` | `number` | `24` | Distance(margin) between the paragraphs |
 | `truncateLastLine` | `boolean` | `true` | Show less words in the last line for more natural feel |
+| `renderWord` | `function` | `({ key, style}) => <span key={key} style={style} />` | Render word with customizations(avoid overriding passed style properties. it might break the functionality) |
 
 ## Contribute
 

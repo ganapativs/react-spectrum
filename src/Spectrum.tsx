@@ -1,6 +1,16 @@
 import * as React from 'react';
 import DrawLine from './DrawLine';
 
+type RenderWordProps = {
+  key: number;
+  style: React.CSSProperties;
+};
+
+export type RenderWord = ({
+  key,
+  style,
+}: RenderWordProps) => React.ReactElement;
+
 type SpectrumProps = {
   /**
    * Width of the placeholder container
@@ -47,6 +57,10 @@ type SpectrumProps = {
    * Show less words in the last line for more natural feel
    */
   truncateLastLine?: boolean;
+  /**
+   * Render word with customizations
+   */
+  renderWord?: RenderWord;
 };
 
 const Spectrum = ({
@@ -61,6 +75,9 @@ const Spectrum = ({
   paragraphs = 1,
   paragraphDistance = 24,
   truncateLastLine = true,
+  renderWord = ({ key, style }: RenderWordProps): React.ReactElement => (
+    <span key={key} style={style} />
+  ),
 }: SpectrumProps): React.ReactElement => {
   return (
     <>
@@ -76,6 +93,7 @@ const Spectrum = ({
               wordRadius={wordRadius}
               lineDistance={lineDistance}
               truncate={truncateLastLine ? j === linesPerParagraph - 1 : false}
+              renderWord={renderWord}
             />
           </div>
         ));
