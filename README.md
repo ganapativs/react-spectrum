@@ -1,6 +1,12 @@
 <p align="center">
   <a href="https://codesandbox.io/s/react-spectrum-animation-vp353">
-    <img src="./assets/demo-sm.gif" alt="react-spectrum-animation">
+    <!-- <img src="./assets/demo-sm.gif" alt="react-spectrum-animation"> -->
+    <img src="./assets/samples/1.png" alt="1" width="250">
+    <img src="./assets/samples/2.png" alt="2" width="250">
+    <img src="./assets/samples/3.png" alt="3" width="250">
+    <img src="./assets/samples/4.png" alt="4" width="250">
+    <img src="./assets/samples/5.png" alt="5" width="250">
+    <img src="./assets/samples/6.png" alt="6" width="250">
   </a>
 </p>
 
@@ -10,7 +16,7 @@ A tiny(**around 1.2kb gzip**) React library to generate colorful text placeholde
 
 Inspired by [this code illustration](./assets/codesandbox-illustration.png) on [CodeSandbox](https://codesandbox.io) homepage 🙏
 
-Also, check out [@BotSpectrum](https://twitter.com/BotSpectrum) twitter bot that tweets randomly generated colorful text placeholders for inspiration 🎊
+Try out the generator at [react-spectrum.netlify.com](https://react-spectrum.netlify.com) 🎊 Also, check out [@BotSpectrum](https://twitter.com/BotSpectrum) twitter bot that tweets randomly generated colorful text placeholders for inspiration 🎊
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ganapativs/react-spectrum/)
