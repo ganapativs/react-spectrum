@@ -1,10 +1,10 @@
 <p align="left">
-  <img src="./assets/samples/1.png" alt="1" width="250">
-  <img src="./assets/samples/2.png" alt="2" width="250">
-  <img src="./assets/samples/3.png" alt="3" width="250">
-  <img src="./assets/samples/4.png" alt="4" width="250">
-  <img src="./assets/samples/5.png" alt="5" width="250">
-  <img src="./assets/samples/6.png" alt="6" width="250">
+  <img src="./assets/samples/1.png" alt="1" width="260">
+  <img src="./assets/samples/2.png" alt="2" width="260">
+  <img src="./assets/samples/3.png" alt="3" width="260">
+  <img src="./assets/samples/4.png" alt="4" width="260">
+  <img src="./assets/samples/5.png" alt="5" width="260">
+  <img src="./assets/samples/6.png" alt="6" width="260">
 </p>
 
 # React Spectrum
