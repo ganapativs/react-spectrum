@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://codesandbox.io/s/react-spectrum-animation-vp353">
+  <!-- <a href="https://codesandbox.io/s/react-spectrum-animation-vp353"> -->
     <!-- <img src="./assets/demo-sm.gif" alt="react-spectrum-animation"> -->
     <img src="./assets/samples/1.png" alt="1" width="250" style="margin-bottom: -3px">
     <img src="./assets/samples/2.png" alt="2" width="250" style="margin-bottom: -3px">
@@ -7,7 +7,7 @@
     <img src="./assets/samples/4.png" alt="4" width="250" style="margin-bottom: -3px">
     <img src="./assets/samples/5.png" alt="5" width="250" style="margin-bottom: -3px">
     <img src="./assets/samples/6.png" alt="6" width="250" style="margin-bottom: -3px">
-  </a>
+  <!-- </a> -->
 </p>
 
 # React Spectrum
