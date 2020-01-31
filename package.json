@@ -50,7 +50,7 @@
   "devDependencies": {
     "@ganapativs/babel-preset-react": "^0.0.4",
     "@ganapativs/eslint-config-react-ts": "^0.1.0",
-    "@size-limit/preset-small-lib": "^3.0.0",
+    "@size-limit/preset-small-lib": "^4.0.0",
     "husky": "^4.0.10",
     "mkdirp": "^1.0.0",
     "rimraf": "^3.0.0",
