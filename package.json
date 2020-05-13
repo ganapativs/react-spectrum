@@ -65,7 +65,7 @@
     "rollup-plugin-typescript": "^1.0.1",
     "rollup-plugin-uglify": "^6.0.4",
     "size-limit": "^4.4.5",
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
