@@ -1,8 +1,8 @@
 declare const getWords: ({ width, colors, wordWidths, wordDistances, truncate, }: {
     width: number;
-    colors: string[];
-    wordWidths: number[];
-    wordDistances: number[];
+    colors: Array<string>;
+    wordWidths: Array<number>;
+    wordDistances: Array<number>;
     truncate: boolean;
 }) => {
     width: number;
