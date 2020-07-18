@@ -46,6 +46,7 @@ export default [
         file: pkg.main,
         format: 'cjs',
         sourcemap: true,
+        exports: 'auto',
       },
     ],
     plugins: getPlugins().concat([terser()]),
