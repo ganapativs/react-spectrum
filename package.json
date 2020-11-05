@@ -71,6 +71,6 @@
   },
   "dependencies": {
     "@types/react": "^16.9.43",
-    "react": "^16.13.1"
+    "react": "^16.14.0"
   }
 }
