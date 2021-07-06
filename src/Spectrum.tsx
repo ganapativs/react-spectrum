@@ -1,15 +1,10 @@
 import * as React from 'react';
 import DrawLine from './DrawLine';
 
-type RenderWordProps = {
+export interface RenderWordProps {
   key: number;
   style: React.CSSProperties;
-};
-
-export type RenderWord = ({
-  key,
-  style,
-}: RenderWordProps) => React.ReactElement;
+}
 
 type SpectrumProps = {
   /**
@@ -60,7 +55,7 @@ type SpectrumProps = {
   /**
    * Render word with customizations
    */
-  renderWord?: RenderWord;
+  renderWord?: React.FC<RenderWordProps>;
 };
 
 const Spectrum = ({

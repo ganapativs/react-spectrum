@@ -1,11 +1,13 @@
-import { useRef, useEffect, memo, useState, createElement, Fragment } from 'react';
+import * as React from 'react';
 
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || from);
 }
 
 function arraysEqual(a, b) {
@@ -15,8 +17,8 @@ function arraysEqual(a, b) {
         return false;
     if (a.length !== b.length)
         return false;
-    var sortedA = __spreadArrays(a).sort();
-    var sortedB = __spreadArrays(b).sort();
+    var sortedA = __spreadArray([], a).sort();
+    var sortedB = __spreadArray([], b).sort();
     for (var i = 0; i < sortedA.length; i += 1) {
         if (sortedA[i] !== sortedB[i])
             return false;
@@ -61,7 +63,7 @@ var getWords = function (_a) {
         else {
             // If we cannot fit the word into the line
             // clear the margin of the last word
-            var last = __spreadArrays(words).reverse()[0];
+            var last = __spreadArray([], words).reverse()[0];
             if (last) {
                 last.distance = 0;
             }
@@ -73,8 +75,8 @@ var getWords = function (_a) {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function usePrevious(value) {
-    var ref = useRef();
-    useEffect(function () {
+    var ref = React.useRef();
+    React.useEffect(function () {
         ref.current = value;
     });
     return ref.current;
@@ -93,7 +95,7 @@ var DrawLine = function (_a) {
         truncate: truncate,
         renderWord: renderWord,
     });
-    var _b = useState(function () {
+    var _b = React.useState(function () {
         return getWords({
             width: width,
             colors: colors,
@@ -102,7 +104,7 @@ var DrawLine = function (_a) {
             truncate: truncate,
         });
     }), words = _b[0], setWords = _b[1];
-    useEffect(function () {
+    React.useEffect(function () {
         // Handle props update on the runtime
         // Memo isn't helping here as props contains array
         // whose reference might change on every re-render
@@ -135,7 +137,7 @@ var DrawLine = function (_a) {
         wordRadius,
         lineDistance,
     ]);
-    return (createElement(Fragment, null, words.map(function (_a, i) {
+    return (React.createElement(React.Fragment, null, words.map(function (_a, i) {
         var w = _a.width, distance = _a.distance, background = _a.background;
         var style = {
             width: w,
@@ -149,23 +151,23 @@ var DrawLine = function (_a) {
         return renderWord({ key: i, style: style });
     })));
 };
-var DrawLine$1 = memo(DrawLine);
+var DrawLine$1 = React.memo(DrawLine);
 
 var Spectrum = function (_a) {
     var _b = _a.width, width = _b === void 0 ? 500 : _b, _c = _a.colors, colors = _c === void 0 ? ['#eee'] : _c, _d = _a.wordWidths, wordWidths = _d === void 0 ? [30, 60, 90, 120, 150] : _d, _e = _a.wordDistances, wordDistances = _e === void 0 ? [4, 8, 12] : _e, _f = _a.wordHeight, wordHeight = _f === void 0 ? 12 : _f, _g = _a.wordRadius, wordRadius = _g === void 0 ? 20 : _g, _h = _a.linesPerParagraph, linesPerParagraph = _h === void 0 ? 8 : _h, _j = _a.lineDistance, lineDistance = _j === void 0 ? 12 : _j, _k = _a.paragraphs, paragraphs = _k === void 0 ? 1 : _k, _l = _a.paragraphDistance, paragraphDistance = _l === void 0 ? 24 : _l, _m = _a.truncateLastLine, truncateLastLine = _m === void 0 ? true : _m, _o = _a.renderWord, renderWord = _o === void 0 ? function (_a) {
         var key = _a.key, style = _a.style;
-        return (createElement("span", { key: key, style: style }));
+        return (React.createElement("span", { key: key, style: style }));
     } : _o;
-    return (createElement(Fragment, null, new Array(paragraphs).fill(true).map(function (_, i) {
-        var lines = new Array(linesPerParagraph).fill(true).map(function (__, j) { return (createElement("div", { "data-line": j, key: j },
-            createElement(DrawLine$1, { width: width, colors: colors, wordWidths: wordWidths, wordDistances: wordDistances, wordHeight: wordHeight, wordRadius: wordRadius, lineDistance: lineDistance, truncate: truncateLastLine ? j === linesPerParagraph - 1 : false, renderWord: renderWord }))); });
-        return (createElement("div", { "data-paragraph": i, key: i, style: {
+    return (React.createElement(React.Fragment, null, new Array(paragraphs).fill(true).map(function (_, i) {
+        var lines = new Array(linesPerParagraph).fill(true).map(function (__, j) { return (React.createElement("div", { "data-line": j, key: j },
+            React.createElement(DrawLine$1, { width: width, colors: colors, wordWidths: wordWidths, wordDistances: wordDistances, wordHeight: wordHeight, wordRadius: wordRadius, lineDistance: lineDistance, truncate: truncateLastLine ? j === linesPerParagraph - 1 : false, renderWord: renderWord }))); });
+        return (React.createElement("div", { "data-paragraph": i, key: i, style: {
                 marginBottom: paragraphDistance,
                 fontSize: 0,
             } }, lines));
     })));
 };
-var Spectrum$1 = memo(Spectrum);
+var Spectrum$1 = React.memo(Spectrum);
 
 export default Spectrum$1;
 //# sourceMappingURL=react-spectrum.es.js.map

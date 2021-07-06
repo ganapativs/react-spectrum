@@ -2,7 +2,7 @@ import * as React from 'react';
 import arraysEqual from './utils/arraysEqual';
 import getWords from './utils/getWords';
 import usePrevious from './usePrevious';
-import { RenderWord } from './Spectrum';
+import { RenderWordProps } from './Spectrum';
 
 interface DrawLineProps {
   width: number;
@@ -13,7 +13,7 @@ interface DrawLineProps {
   wordHeight: number;
   wordRadius: number;
   lineDistance: number;
-  renderWord: RenderWord;
+  renderWord: React.FC<RenderWordProps>;
 }
 
 const DrawLine = ({
