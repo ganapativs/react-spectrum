@@ -7,7 +7,7 @@ function __spreadArray(to, from, pack) {
             ar[i] = from[i];
         }
     }
-    return to.concat(ar || from);
+    return to.concat(ar || Array.prototype.slice.call(from));
 }
 
 function arraysEqual(a, b) {
@@ -17,8 +17,8 @@ function arraysEqual(a, b) {
         return false;
     if (a.length !== b.length)
         return false;
-    var sortedA = __spreadArray([], a).sort();
-    var sortedB = __spreadArray([], b).sort();
+    var sortedA = __spreadArray([], a, true).sort();
+    var sortedB = __spreadArray([], b, true).sort();
     for (var i = 0; i < sortedA.length; i += 1) {
         if (sortedA[i] !== sortedB[i])
             return false;
@@ -63,7 +63,7 @@ var getWords = function (_a) {
         else {
             // If we cannot fit the word into the line
             // clear the margin of the last word
-            var last = __spreadArray([], words).reverse()[0];
+            var last = __spreadArray([], words, true).reverse()[0];
             if (last) {
                 last.distance = 0;
             }
@@ -169,5 +169,5 @@ var Spectrum = function (_a) {
 };
 var Spectrum$1 = React.memo(Spectrum);
 
-export default Spectrum$1;
+export { Spectrum$1 as default };
 //# sourceMappingURL=react-spectrum.es.js.map
