@@ -115,6 +115,8 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 - Push to the branch: `git push origin my-new-feature`
 - Submit a pull request with full remarks documenting your changes
 
+> This project is tested with BrowserStack.
+
 ## License
 
 [MIT License](https://opensource.org/licenses/MIT) © [Ganapati V S](https://meetguns.com)
