@@ -1,9 +1,9 @@
 {
-  "type": "module",
   "name": "react-spectrum",
   "version": "1.2.6",
+  "type": "module",
   "description": "Generate colorful text placeholders 🎨",
-  "main": "dist/react-spectrum.js",
+  "main": "dist/react-spectrum.cjs",
   "module": "dist/react-spectrum.es.js",
   "jsnext:main": "dist/react-spectrum.es.js",
   "browser": "dist/react-spectrum.umd.js",
@@ -35,17 +35,13 @@
     "watch": "pnpm run build -w",
     "lint": "tsc --noEmit && eslint './src/**/*' --quiet --fix",
     "prepublishOnly": "pnpm run build",
-    "size": "size-limit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm run build && git add dist"
-    }
+    "size": "size-limit",
+    "prepare": "husky"
   },
   "size-limit": [
     {
       "limit": "1.5 KB",
-      "path": "dist/react-spectrum.js"
+      "path": "dist/react-spectrum.cjs"
     }
   ],
   "devDependencies": {

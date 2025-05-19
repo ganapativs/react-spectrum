@@ -45,7 +45,7 @@ export default [
     external: ['react'],
     output: [
       {
-        file: pkg.main,
+        file: 'dist/react-spectrum.cjs',
         format: 'cjs',
         sourcemap: true,
         exports: 'auto',
