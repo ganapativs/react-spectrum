@@ -84,9 +84,8 @@ const DrawLine = ({
     wordRadius,
     lineDistance,
   ]);
-
   return (
-    <>
+    <React.Fragment>
       {words.map(({ width: w, distance, background }, i) => {
         const style = {
           width: w,
@@ -98,9 +97,14 @@ const DrawLine = ({
           marginBottom: lineDistance,
         };
 
-        return renderWord({ key: i, style });
+        // Ensure only synchronous results are rendered
+        const node = renderWord({ key: i, style });
+        if (node instanceof Promise) {
+          throw new Error("renderWord must be synchronous and not return a Promise.");
+        }
+        return node;
       })}
-    </>
+    </React.Fragment>
   );
 };
 

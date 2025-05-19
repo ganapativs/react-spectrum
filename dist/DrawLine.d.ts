@@ -11,5 +11,5 @@ interface DrawLineProps {
     lineDistance: number;
     renderWord: React.FC<RenderWordProps>;
 }
-declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, wordHeight, wordRadius, lineDistance, truncate, renderWord, }: DrawLineProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, wordHeight, wordRadius, lineDistance, truncate, renderWord, }: DrawLineProps) => React.ReactElement>;
 export default _default;
