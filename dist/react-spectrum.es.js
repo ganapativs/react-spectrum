@@ -124,7 +124,7 @@ const DrawLine = ({ width, colors, wordWidths, wordDistances, wordHeight, wordRa
         wordRadius,
         lineDistance,
     ]);
-    return (jsx(React.Fragment, { children: words.map(({ width: w, distance, background }, i) => {
+    return (jsx(Fragment, { children: words.map(({ width: w, distance, background }, i) => {
             const style = {
                 width: w,
                 marginRight: distance,
@@ -137,7 +137,7 @@ const DrawLine = ({ width, colors, wordWidths, wordDistances, wordHeight, wordRa
             // Ensure only synchronous results are rendered
             const node = renderWord({ key: i, style });
             if (node instanceof Promise) {
-                throw new Error("renderWord must be synchronous and not return a Promise.");
+                throw new Error("`renderWord` must be synchronous function and not return a Promise.");
             }
             return node;
         }) }));
