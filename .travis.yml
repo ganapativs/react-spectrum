@@ -4,10 +4,8 @@ os:
   - linux
   - osx
 node_js:
-  - "node"
-  - "13"
-  - "12"
-  - "10"
+  - "20"
+  - "18"
 cache:
   yarn: true
   directories:

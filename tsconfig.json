@@ -1,21 +1,17 @@
 {
-    "compilerOptions": {
-        "rootDir": "src",
-        "forceConsistentCasingInFileNames": true,
-        "jsx": "react",
-        "lib": ["es6", "dom"],
-        "module": "esnext",
-        "moduleResolution": "node",
-        "noImplicitAny": true,
-        "strict": true,
-        "target": "es5",
-        "resolveJsonModule": true,
-        "allowSyntheticDefaultImports": true
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": ["es2017", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "strict": true,
+    "target": "es2017",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

@@ -4,9 +4,9 @@ declare const getWords: ({ width, colors, wordWidths, wordDistances, truncate, }
     wordWidths: Array<number>;
     wordDistances: Array<number>;
     truncate: boolean;
-}) => {
+}) => Array<{
     width: number;
     distance: number;
     background: string;
-}[];
+}>;
 export default getWords;

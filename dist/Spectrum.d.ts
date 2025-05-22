@@ -3,7 +3,7 @@ export interface RenderWordProps {
     key: number;
     style: React.CSSProperties;
 }
-declare type SpectrumProps = {
+type SpectrumProps = {
     /**
      * Width of the placeholder container
      */
@@ -54,5 +54,5 @@ declare type SpectrumProps = {
      */
     renderWord?: React.FC<RenderWordProps>;
 };
-declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, wordHeight, wordRadius, linesPerParagraph, lineDistance, paragraphs, paragraphDistance, truncateLastLine, renderWord, }: SpectrumProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+declare const _default: React.MemoExoticComponent<({ width, colors, wordWidths, wordDistances, wordHeight, wordRadius, linesPerParagraph, lineDistance, paragraphs, paragraphDistance, truncateLastLine, renderWord, }: SpectrumProps) => React.ReactElement>;
 export default _default;

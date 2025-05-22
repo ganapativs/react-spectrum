@@ -24,9 +24,9 @@ Try out the generator at [react-spectrum.netlify.app](https://react-spectrum.net
 
 ## Demo
 
-- [Basic](https://codesandbox.io/s/react-spectrum-demo-83c90)
-- [Advanced](https://codesandbox.io/s/react-spectrum-demo-advanced-kh7zy)
-- [Animating using CSS](https://codesandbox.io/s/react-spectrum-animation-vp353)
+- [Basic](https://stackblitz.com/edit/react-spectrum-basic)
+- [Advanced](https://stackblitz.com/edit/react-spectrum-advanced)
+- [Animating using CSS](https://stackblitz.com/edit/react-spectrum-animated)
 
 ## Table of Contents
 
@@ -77,20 +77,20 @@ function Placeholder() {
 
 ## Props
 
-| Property      | Type          | Default       | Description |
-| ------------- | ------------- | ------------- | ----------- |
-| `width` | `number` | `500` | Width of the placeholder container |
-| `colors` | `Array<string>` | `['#eee']` | Possible colors of words, will be picked randomly |
-| `wordWidths` | `Array<number>` | `[30, 60, 90, 120, 150]` | Possible widths of words, will be picked randomly |
-| `wordDistances` | `Array<number>` | `[4, 8, 12]` | Possible distance between words, will be picked randomly |
-| `wordHeight` | `number` | `12` | Height of every word placeholder |
-| `wordRadius` | `number` | `20` | Border radius of every word |
-| `lineDistance` | `number` | `12` | Distance(margin) between the lines |
-| `linesPerParagraph` | `number` | `8` |  Lines per paragraph. if there are multiple paragraphs, all of them will have same number of lines |
-| `paragraphs` | `number` | `1` | Number of paragraphs in the placeholder |
-| `paragraphDistance` | `number` | `24` | Distance(margin) between the paragraphs |
-| `truncateLastLine` | `boolean` | `true` | Show less words in the last line for more natural feel |
-| `renderWord` | `function` | `({ key, style}) => <span key={key} style={style} />` | Render word with customizations(avoid overriding passed style properties. it might break the functionality) |
+| Property            | Type            | Default                                               | Description                                                                                                 |
+| ------------------- | --------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `width`             | `number`        | `500`                                                 | Width of the placeholder container                                                                          |
+| `colors`            | `Array<string>` | `['#eee']`                                            | Possible colors of words, will be picked randomly                                                           |
+| `wordWidths`        | `Array<number>` | `[30, 60, 90, 120, 150]`                              | Possible widths of words, will be picked randomly                                                           |
+| `wordDistances`     | `Array<number>` | `[4, 8, 12]`                                          | Possible distance between words, will be picked randomly                                                    |
+| `wordHeight`        | `number`        | `12`                                                  | Height of every word placeholder                                                                            |
+| `wordRadius`        | `number`        | `20`                                                  | Border radius of every word                                                                                 |
+| `lineDistance`      | `number`        | `12`                                                  | Distance(margin) between the lines                                                                          |
+| `linesPerParagraph` | `number`        | `8`                                                   | Lines per paragraph. if there are multiple paragraphs, all of them will have same number of lines           |
+| `paragraphs`        | `number`        | `1`                                                   | Number of paragraphs in the placeholder                                                                     |
+| `paragraphDistance` | `number`        | `24`                                                  | Distance(margin) between the paragraphs                                                                     |
+| `truncateLastLine`  | `boolean`       | `true`                                                | Show less words in the last line for more natural feel                                                      |
+| `renderWord`        | `function`      | `({ key, style}) => <span key={key} style={style} />` | Render word with customizations(avoid overriding passed style properties. it might break the functionality) |
 
 ## Contribute
 

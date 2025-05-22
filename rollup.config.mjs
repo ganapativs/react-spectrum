@@ -2,18 +2,20 @@ import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import cleanup from 'rollup-plugin-cleanup';
-import pkg from './package.json';
+import pkg from './package.json' with { type: 'json' };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const getPlugins = () => [
   peerDepsExternal(),
   resolve(),
   babel({
     babelHelpers: 'bundled',
     exclude: 'node_modules/**',
+    presets: [
+      ['@babel/preset-react', { runtime: 'automatic' }]
+    ],
   }),
   commonjs(),
   typescript(),
@@ -29,6 +31,7 @@ export default [
     output: {
       globals: {
         react: 'React',
+        'react/jsx-runtime': 'jsxRuntime',
       },
       name: 'ReactSpectrum',
       file: pkg.browser,
@@ -42,7 +45,7 @@ export default [
     external: ['react'],
     output: [
       {
-        file: pkg.main,
+        file: 'dist/react-spectrum.cjs',
         format: 'cjs',
         sourcemap: true,
         exports: 'auto',
